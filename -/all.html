@@ -1,3 +1,4 @@
+{{ define "layout"}}
 <!DOCTYPE html>
 <html lang="en" >
 	<head>
@@ -6,10 +7,11 @@
 		
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 		
-		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="{{.css}}all.css">
 		
 	</head>
 	<body>
+
 		<h1>WELLCODE.io</h1>
 		<nav class="nav">
 			<ul class=list>
@@ -40,13 +42,13 @@
 							</ul>
 						</li>
 						<li>
-							<a href="#">Navigation Bar</a>
+							<a >Navigation Bar</a>
 							<ul>
 								<li>
-									<a href="-/navbar-left.html">Left</a>
+									<a href="{{.BaseURL}}/navbar/left/1">Left</a>
 								</li>
 								<li>
-									<a href="-/navbar-top.html">Top</a>
+									<a href="{{.BaseURL}}/navbar/top/1">Top</a>
 								</li>
 							</ul>
 						</li>
@@ -126,3 +128,4 @@
 		</nav>
 	</body>
 </html>
+{{end}}
