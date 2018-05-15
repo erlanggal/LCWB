@@ -1,0 +1,15 @@
+{{define "layout"}}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>FORM</title>
+	</head>
+	<body>
+		<form action="/create?step=1" method="post" accept-charset="utf-8">
+			<input type="text" name="data" id="data" value="{{.data}}" placeholder="" hidden>
+			<input type="text" name="filename" id="filename" value="" placeholder="filename" required>
+			<button type="">Submit</button>
+		</form>
+	</body>
+</html>
+{{end}}

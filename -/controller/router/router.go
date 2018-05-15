@@ -1,10 +1,12 @@
 package router
 
 import (
+	"fmt"
 	"github.com/gorilla/mux"
 	function "github.com/kevinrizkhy/LCWB/-/model/utility"
 	"html/template"
 	"net/http"
+	"strconv"
 	"strings"
 )
 
@@ -26,18 +28,31 @@ func Home(w http.ResponseWriter, r *http.Request) {
 
 func Create(w http.ResponseWriter, r *http.Request) {
 	param_step := r.URL.Query()["step"]
-	if param_step == nil {
-		t, _ = template.ParseFiles(
-			"-/view/all.html",
-		)
-		data := map[string]interface{}{
-			"BaseURL": BaseURL,
-		}
-		t.ExecuteTemplate(w, "layout", data)
-	} else {
-		//step := param_step[0]
+	step_str := "0"
+	if param_step != nil {
+		step_str = param_step[0]
 	}
-
+	step, _ := strconv.Atoi(step_str)
+	if r.Method == "POST" {
+		fmt.Sprintln(step)
+		//save di db
+		filename := r.FormValue("filename")
+		data := r.FormValue("data")
+		//data_split := strings.Split(data, "!@#$%^&*()_+")
+		fmt.Fprintln(w, filename+data)
+	} else {
+		if step == 0 {
+			t, _ = template.ParseFiles(
+				"-/view/form/form.html",
+			)
+			data := map[string]interface{}{
+				"BaseURL": BaseURL,
+			}
+			t.ExecuteTemplate(w, "layout", data)
+		} else if step == 1 {
+			//step := param_step[0]
+		}
+	}
 }
 
 func Navbar(w http.ResponseWriter, r *http.Request) {
