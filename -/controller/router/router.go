@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"github.com/gorilla/mux"
 	file "github.com/kevinrizkhy/LCWB/-/model/file"
-	function "github.com/kevinrizkhy/LCWB/-/model/utility"
+	function "github.com/kevinrizkhy/LCWB/-/model/html"
 	"html/template"
 	"net/http"
 	"strconv"
@@ -63,18 +63,14 @@ func Navbar(w http.ResponseWriter, r *http.Request) {
 	types := vars["type"]
 	id := vars["pID"]
 	var folder []string
-	var html_path, css_path, js_path string
+	var path string
 	if types == "top" {
-		folder = function.FolderList("Navigation Bar/Top")
-		css_path = "Navigation Bar/Top/" + id + "/css/style.css"
-		html_path = "Navigation Bar/Top/" + id + "/index.html"
-		js_path = "Navigation Bar/Top/" + id + "/js/js.js"
+		folder = file.FolderList("Navigation Bar/Top")
+		path = "Navigation Bar/Top/" + id
 	} else if types == "left" {
-		folder = function.FolderList("Navigation Bar/Left")
-		css_path = "Navigation Bar/Left/" + id + "/css/style.css"
-		html_path = "Navigation Bar/Left/" + id + "/index.html"
-		js_path = "Navigation Bar/Left/" + id + "/js/js.js"
+		folder = file.FolderList("Navigation Bar/Left")
+		path = "Navigation Bar/Left/" + id
 	}
 	title := "NAVBAR - " + strings.ToUpper(types)
-	function.ExecuteTemplate(title, r.URL.String(), html_path, css_path, js_path, folder, w)
+	function.ExecuteTemplate(title, r.URL.String(), path, folder, w)
 }
