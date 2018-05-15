@@ -3,6 +3,7 @@ package router
 import (
 	"fmt"
 	"github.com/gorilla/mux"
+	file "github.com/kevinrizkhy/LCWB/-/model/file"
 	function "github.com/kevinrizkhy/LCWB/-/model/utility"
 	"html/template"
 	"net/http"
@@ -37,9 +38,11 @@ func Create(w http.ResponseWriter, r *http.Request) {
 		fmt.Sprintln(step)
 		//save di db
 		filename := r.FormValue("filename")
-		data := r.FormValue("data")
-		//data_split := strings.Split(data, "!@#$%^&*()_+")
-		fmt.Fprintln(w, filename+data)
+		data := r.FormValue("data") + "!@#$%^&*()_+" + filename
+		fmt.Sprintln(w, data)
+		title, html := file.GetFile(".html", "Navigation Bar/Top/")
+		fmt.Println(title)
+		fmt.Println(html)
 	} else {
 		if step == 0 {
 			t, _ = template.ParseFiles(

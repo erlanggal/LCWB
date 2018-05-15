@@ -19,10 +19,10 @@ const (
 )
 
 func ExecuteTemplate(title, url, html_path, css_path, js_path string, folderList []string, w http.ResponseWriter) {
-	html := concatFile(html_path)
+	html := ConcatFile(html_path)
 	html = strings.Replace(html, "css/style.css", BaseURL+"/assets/css/preview.css", -1)
-	css := concatFile(css_path)
-	js := concatFile(js_path)
+	css := ConcatFile(css_path)
+	js := ConcatFile(js_path)
 	writeFile([]byte(css), PreviewCSS)
 	url_split := strings.Split(url, "/")
 	data := map[string]interface{}{
@@ -54,7 +54,7 @@ func FolderList(pathS string) []string {
 	return list
 }
 
-func concatFile(pathS string) string {
+func ConcatFile(pathS string) string {
 	var files string
 	file, _ := os.Open(pathS)
 	defer file.Close()
