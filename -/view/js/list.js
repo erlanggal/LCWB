@@ -9,32 +9,37 @@ $(document).ready(function () {
     var li1 = $(".hp-li:eq(1)");
     var li2 = $(".hp-li:eq(2)");
     var li3 = $(".hp-li:eq(3)");
-    var li4 = $(".hp-li:eq(4)");
+    li0.click(function(){
+        setAllDisplayNone(li);
+        li0.addClass("selected");
+        $("#section-preview").css("display", "block");
+    });
     li1.click(function(){
-        if (li.hasClass("selected")) {
-            li.removeClass("selected");
-        }
+        setAllDisplayNone(li);
         li1.addClass("selected");
+        $("#section-html").css("display", "block");
     });
     li2.click(function(){
-        if (li.hasClass("selected")) {
-            li.removeClass("selected");
-        }
+        setAllDisplayNone(li);
         li2.addClass("selected");
+        $("#section-css").css("display", "block");
     });
     li3.click(function(){
-        if (li.hasClass("selected")) {
-            li.removeClass("selected");
-        }
+        setAllDisplayNone(li);
         li3.addClass("selected");
-    });
-    li4.click(function(){
-        if (li.hasClass("selected")) {
-            li.removeClass("selected");
-        }
-        li4.addClass("selected");
+        $("#section-js").css("display", "block");
     });
 });
+
+function setAllDisplayNone(li){
+    if (li.hasClass("selected")) {
+        li.removeClass("selected");
+    }
+    $("#section-preview").css("display", "none");
+    $("#section-html").css("display", "none");
+    $("#section-css").css("display", "none");
+    $("#section-js").css("display", "none");
+}
 
 function openSidebar() {
     document.getElementById("hm-menu").style.width = "250px";

@@ -6,6 +6,15 @@
     padding-right: 20px;
 }
 
+.list-textarea{
+    width: 100%;
+    grid-auto-rows: auto;
+    resize: none;
+    display:inline-block;
+    min-height: 600px;
+    border: none;
+}
+
 * {
     box-sizing: border-box;
 }
