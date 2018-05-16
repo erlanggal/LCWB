@@ -1,14 +1,17 @@
-# LowCostWeBsite
-Backbone LCWB dengan menggunakan HTML dan CSS untuk _frontend_ dan GO untuk _backend_.
+# Personal Web Design
+Backbone for Personal Web Design using HTML5 and CSS3 for _frontend_ and GO for _backend_.
 
-## Aturan File
-1. File _.html_ selalu diberi nama _index.html_.
-1. File _.js_ disimpan didalam folder _js_.
-1. File _.css_ dengan nama _style.css_ yang berada dalam folder _css_.
+## File Storing Rule
+1. _.css_ file always stored in _-/view/css_ folder.
+1. _.js_ file always stored in _-/view/js_ folder.
 
-## Aturan Penulisan HTML
+## Writing Rule in HTML
+1. If it different section, always declare _section_ block
+1. If it under the _section_ block, declare _container_ and _row_ class first
+1. Dont forget to add new class or id if it has different style, __so it dont stack each other__
 
-## Aturan Penulisan CSS
-1. Penulisan _class_ diambil dari __urutan folder__. Misal berada pada folder "_Navigation Bar/Top/navbar-title_", maka nama _class_ menjadi _navtop-navbar-title_.
+## Writing Rule in CSS
+1. _Class_ and _id_ name always __has its own unique parents prefix__.
 
-## Aturan Penulisan JS
+## Writing Rule in JS
+1. _Tidy please!_
