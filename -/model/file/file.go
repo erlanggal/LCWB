@@ -55,7 +55,12 @@ func ConcatFile(pathS string) (string, string, string) {
 			}
 			r, err = regexp.MatchString(".css", f.Name())
 			if err == nil && r {
-				css += ReadFile(path)
+				content := strings.Split(ReadFile(path), "/* --- */")
+				for i := 0; i < len(content); i++ {
+					if !strings.Contains(css, content[i]) {
+						css += "\n" + content[i]
+					}
+				}
 			}
 			r, err = regexp.MatchString(".js", f.Name())
 			if err == nil && r {

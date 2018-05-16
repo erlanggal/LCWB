@@ -10,9 +10,9 @@ import (
 var t *template.Template
 
 const (
-	BaseURL    = "http://localhost:80"
+	BaseURL    = "http://localhost:8080"
 	PreviewCSS = "-/view/css/preview.css"
-	PreviewJS = "-/view/js/preview.js"
+	PreviewJS  = "-/view/js/preview.js"
 )
 
 func ExecuteTemplate(title, url, path string, folderList []string, w http.ResponseWriter) {
