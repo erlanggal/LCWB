@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/gorilla/mux"
-	router "github.com/kevinrizkhy/LCWB/-/controller/router"
+	router "github.com/wellcode/LCWB/-/controller/router"
 	"net/http"
 )
 

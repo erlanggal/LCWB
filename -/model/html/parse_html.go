@@ -1,7 +1,7 @@
 package html
 
 import (
-	file "github.com/kevinrizkhy/LCWB/-/model/file"
+	file "github.com/wellcode/LCWB/-/model/file"
 	"html/template"
 	"net/http"
 	"strings"

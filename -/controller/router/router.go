@@ -3,8 +3,8 @@ package router
 import (
 	"fmt"
 	"github.com/gorilla/mux"
-	file "github.com/kevinrizkhy/LCWB/-/model/file"
-	function "github.com/kevinrizkhy/LCWB/-/model/html"
+	file "github.com/wellcode/LCWB/-/model/file"
+	function "github.com/wellcode/LCWB/-/model/html"
 	"html/template"
 	"net/http"
 	"strconv"
