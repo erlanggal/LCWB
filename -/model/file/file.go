@@ -55,7 +55,8 @@ func ConcatFile(pathS string) (string, string, string) {
 			}
 			r, err = regexp.MatchString(".css", f.Name())
 			if err == nil && r {
-				content := strings.Split(ReadFile(path), "/* --- */")
+				content := strings.Split(ReadFile(path), "\n\n")
+				fmt.Println(len(content))
 				for i := 0; i < len(content); i++ {
 					if !strings.Contains(css, content[i]) {
 						css += "\n" + content[i]
