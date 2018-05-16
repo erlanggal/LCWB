@@ -14,7 +14,7 @@ import (
 var t *template.Template
 
 const (
-	BaseURL = "http://localhost:80"
+	BaseURL = "http://localhost:8080"
 )
 
 func Home(w http.ResponseWriter, r *http.Request) {
@@ -34,27 +34,48 @@ func Create(w http.ResponseWriter, r *http.Request) {
 		step_str = param_step[0]
 	}
 	step, _ := strconv.Atoi(step_str)
+	data := map[string]interface{}{
+		"BaseURL": BaseURL,
+	}
 	if r.Method == "POST" {
-		fmt.Sprintln(step)
 		//save di db
-		filename := r.FormValue("filename")
-		data := r.FormValue("data") + "!@#$%^&*()_+" + filename
-		fmt.Sprintln(w, data)
-		title, html := file.GetFile(".html", "Navigation Bar/Top/")
-		fmt.Println(title)
-		fmt.Println(html)
-	} else {
-		if step == 0 {
-			t, _ = template.ParseFiles(
-				"-/view/form/form.html",
-			)
-			data := map[string]interface{}{
-				"BaseURL": BaseURL,
-			}
-			t.ExecuteTemplate(w, "layout", data)
-		} else if step == 1 {
-			//step := param_step[0]
+		filename := r.FormValue("templatename")
+		path := r.FormValue("path")
+		track := ""
+		if filename != "" {
+			track = filename + "!@#$%^&*()_+"
+		} else {
+			track = r.FormValue("track") + path + "!@#$%^&*()_+"
 		}
+
+		fmt.Sprintln(data)
+		if step == 1 {
+			data["Title"] = "NavBar"
+			data["type"] = "1"
+		} else if step == 2 {
+			fmt.Fprint(w, track)
+		} else if step == 3 {
+		} else if step == 4 {
+		}
+		array_title, array_html, array_path := file.GetFile(".html", "Navigation Bar/Top/")
+		for i := 0; i < len(array_html); i++ {
+			array_html[i] = strings.Replace(array_html[i], "<link rel=\"stylesheet\" href=\"css/style.css\">", "", -1)
+			array_html[i] = strings.Replace(array_html[i], "<script type=\"text/javascript\" src=\"/js/js.js\"></script>", "", -1)
+		}
+		data["array_title"] = array_title
+		data["array_html"] = array_html
+		data["array_path"] = array_path
+		data["Track"] = track
+		t, _ = template.ParseFiles(
+			"-/view/form/form_list.html",
+		)
+		t.ExecuteTemplate(w, "layout", data)
+
+	} else {
+		t, _ = template.ParseFiles(
+			"-/view/form/form.html",
+		)
+		t.ExecuteTemplate(w, "layout", data)
 	}
 }
 

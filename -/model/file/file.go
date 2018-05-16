@@ -10,9 +10,10 @@ import (
 	"strings"
 )
 
-func GetFile(ext, pathS string) ([]string, []string) {
+func GetFile(ext, pathS string) ([]string, []string, []string) {
 	var files []string
 	var html []string
+	var arr_path []string
 	filepath.Walk(pathS, func(path string, f os.FileInfo, _ error) error {
 		if !f.IsDir() {
 			r, err := regexp.MatchString(ext, f.Name())
@@ -22,11 +23,12 @@ func GetFile(ext, pathS string) ([]string, []string) {
 		} else {
 			if f.Name() != "css" && f.Name() != "js" {
 				files = append(files, f.Name())
+				arr_path = append(arr_path, path)
 			}
 		}
 		return nil
 	})
-	return files, html
+	return files, html, arr_path[1:]
 }
 
 func FolderList(pathS string) []string {
