@@ -29,6 +29,30 @@ $(document).ready(function () {
         li3.addClass("selected");
         $("#section-js").css("display", "block");
     });
+
+    // $(".td-box").click(function() {
+    //     $(this.id).css("borderColor", "#03a9f4");
+    //     alert(this.id);
+    // });
+
+    var box1 = $("#td-box-1");
+    var box2 = $("#td-box-2");
+    var box3 = $("#td-box-3");
+    var box4 = $("#td-box-4");
+
+    $(box1).click(function(){
+        $(this).toggleClass('border-blue');
+    });
+    $(box2).click(function(){
+        $(this).toggleClass('border-blue');
+    });
+    $(box3).click(function(){
+        $(this).toggleClass('border-blue');
+    });
+    $(box4).click(function(){
+        $(this).toggleClass('border-blue');
+    });
+      
 });
 
 function setAllDisplayNone(li){

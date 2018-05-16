@@ -248,6 +248,10 @@ li {
     margin: 0 1em;
 }
 
+.hp-li {
+    cursor: pointer;
+}
+
 .selected {
     border-bottom: 1px solid #0b0b0b;
 }

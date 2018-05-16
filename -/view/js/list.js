@@ -29,6 +29,11 @@ $(document).ready(function () {
         li3.addClass("selected");
         $("#section-js").css("display", "block");
     });
+
+    $(".td-box").click(function() {
+        (this.id).css("borderColor", "#03a9f4");
+        alert("a");
+    });
 });
 
 function setAllDisplayNone(li){
