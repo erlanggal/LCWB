@@ -4,7 +4,6 @@ body {
   margin: 0;
 }
 
-/* NAVIGATION */
 
 .nt2-nav {
   width: 100%;
@@ -14,14 +13,17 @@ body {
   box-shadow: 0px 5px 0px #dedede;
 }
 
+
 .nt2-nav ul {
   list-style: none;
   text-align: center;
 }
 
+
 .nt2-nav ul li {
   display: inline-block;
 }
+
 
 .nt2-nav ul li a {
   display: block;
@@ -33,19 +35,21 @@ body {
   margin: 0 10px;
 }
 
+
 .nt2-nav ul li a, .nt2-nav ul li a:after, .nt2-nav ul li a:before {
   transition: all .5s;
 }
+
 
 .nt2-nav ul li a:hover {
   color: #555;
 }
 
-/* stroke */
 
 .nt2-nav.stroke ul li a, .nt2-nav.fill ul li a {
   position: relative;
 }
+
 
 .nt2-nav.stroke ul li a:after, .nt2-nav.fill ul li a:after {
   position: absolute;
@@ -60,13 +64,16 @@ body {
   height: 1px;
 }
 
+
 .nt2-nav.stroke ul li a:hover:after {
   width: 100%;
 }
 
+
 .nt2-nav.fill ul li a {
   transition: all 2s;
 }
+
 
 .nt2-nav.fill ul li a:after {
   text-align: left;
@@ -75,10 +82,12 @@ body {
   opacity: 0;
 }
 
+
 .nt2-nav.fill ul li a:hover {
   color: #fff;
   z-index: 1;
 }
+
 
 .nt2-nav.fill ul li a:hover:after {
   z-index: -10;
@@ -88,13 +97,13 @@ body {
   opacity: 1;
 }
 
-/* Circle */
 
 .nt2-nav.circle ul li a {
   position: relative;
   overflow: hidden;
   z-index: 1;
 }
+
 
 .nt2-nav.circle ul li a:after {
   display: block;
@@ -112,20 +121,22 @@ body {
   background: transparent;
 }
 
+
 .nt2-nav.circle ul li a:hover:after {
   -webkit-animation: circle 1.5s ease-in forwards;
 }
 
-/* SHIFT */
 
 .nt2-nav.shift ul li a {
   position: relative;
   z-index: 1;
 }
 
+
 .nt2-nav.shift ul li a:hover {
   color: #91640F;
 }
+
 
 .nt2-nav.shift ul li a:after {
   display: block;
@@ -145,15 +156,18 @@ body {
   z-index: -1;
 }
 
+
 .nt2-nav.shift ul li a:hover:after {
   opacity: 1;
   visibility: visible;
   height: 100%;
 }
 
+
 .td-wrapper {
   margin: 5em auto;
 }
+
 
 .td-box {
   border-top: 1px solid #0b0b0b;
@@ -166,6 +180,7 @@ body {
   margin: 5em auto;
 }
 
+
 .td-title h3 {
   position: absolute;
   bottom: -15%;
@@ -174,15 +189,16 @@ body {
   color: #fff;
 }
 
+
 .border-blue {
   border-color: #03a9f4;
 }
+
 
 .border-black {
   border-color: #0b0b0b;
 }
 
-/* Keyframes */
 
 @-webkit-keyframes fill {
   0% {
@@ -200,7 +216,6 @@ body {
   }
 }
 
-/* Keyframes */
 
 @-webkit-keyframes circle {
   0% {
