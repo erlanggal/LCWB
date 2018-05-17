@@ -30,27 +30,115 @@ $(document).ready(function () {
         $("#section-js").css("display", "block");
     });
 
-    // $(".td-box").click(function() {
-    //     $(this.id).css("borderColor", "#03a9f4");
-    //     alert(this.id);
-    // });
-
     var box1 = $("#td-box-1");
     var box2 = $("#td-box-2");
     var box3 = $("#td-box-3");
     var box4 = $("#td-box-4");
+    var b1 = b2 = b3 = b4 = false;
 
     $(box1).click(function(){
-        $(this).toggleClass('border-blue');
+        if (b1) {
+            $(this).removeClass('border-blue');
+            $(this).addClass('border-black');
+            b1 = false; 
+        } else if (!b1) {
+            if (b2) {
+                $(box2).removeClass('border-blue');
+                $(box2).addClass('border-black');
+                b2 = false;
+            }
+            if (b3) {
+                $(box3).removeClass('border-blue');
+                $(box3).addClass('border-black');
+                b3 = false;
+            }
+            if (b4) {
+                $(box4).removeClass('border-blue');
+                $(box4).addClass('border-black');
+                b4 = false;
+            }
+            $(this).removeClass('border-black');
+            $(this).addClass('border-blue');
+            b1 = true;
+        }
     });
     $(box2).click(function(){
-        $(this).toggleClass('border-blue');
+        if (b2) {
+            $(this).removeClass('border-blue');
+            $(this).addClass('border-black');
+            b2 = false; 
+        } else if (!b2) {
+            if (b1) {
+                $(box1).removeClass('border-blue');
+                $(box1).addClass('border-black');
+                b1 = false;
+            }
+            if (b3) {
+                $(box3).removeClass('border-blue');
+                $(box3).addClass('border-black');
+                b3 = false;
+            }
+            if (b4) {
+                $(box4).removeClass('border-blue');
+                $(box4).addClass('border-black');
+                b4 = false;
+            }
+            $(this).removeClass('border-black');
+            $(this).addClass('border-blue');
+            b2 = true;
+        }
     });
     $(box3).click(function(){
-        $(this).toggleClass('border-blue');
+        if (b3) {
+            $(this).removeClass('border-blue');
+            $(this).addClass('border-black');
+            b3 = false; 
+        } else if (!b3) {
+            if (b1) {
+                $(box1).removeClass('border-blue');
+                $(box1).addClass('border-black');
+                b1 = false;
+            }
+            if (b2) {
+                $(box2).removeClass('border-blue');
+                $(box2).addClass('border-black');
+                b2 = false;
+            }
+            if (b4) {
+                $(box4).removeClass('border-blue');
+                $(box4).addClass('border-black');
+                b4 = false;
+            }
+            $(this).removeClass('border-black');
+            $(this).addClass('border-blue');
+            b3 = true;
+        }
     });
     $(box4).click(function(){
-        $(this).toggleClass('border-blue');
+        if (b4) {
+            $(this).removeClass('border-blue');
+            $(this).addClass('border-black');
+            b4 = false; 
+        } else if (!b4) {
+            if (b1) {
+                $(box1).removeClass('border-blue');
+                $(box1).addClass('border-black');
+                b1 = false;
+            }
+            if (b3) {
+                $(box3).removeClass('border-blue');
+                $(box3).addClass('border-black');
+                b3 = false;
+            }
+            if (b3) {
+                $(box3).removeClass('border-blue');
+                $(box3).addClass('border-black');
+                b4 = false;
+            }
+            $(this).removeClass('border-black');
+            $(this).addClass('border-blue');
+            b4 = true;
+        }
     });
       
 });
