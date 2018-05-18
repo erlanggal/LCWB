@@ -57,13 +57,18 @@ func Create(w http.ResponseWriter, r *http.Request) {
 		} else if step == 3 {
 		} else if step == 4 {
 		}
+		array_html_template := []template.HTML{}
 		array_title, array_html, array_path := file.GetFile(".html", "Navigation Bar/Top/")
 		for i := 0; i < len(array_html); i++ {
 			array_html[i] = strings.Replace(array_html[i], "<link rel=\"stylesheet\" href=\"css/style.css\">", "", -1)
 			array_html[i] = strings.Replace(array_html[i], "<script type=\"text/javascript\" src=\"/js/js.js\"></script>", "", -1)
+			var temp string
+			temp = array_html[i]
+			array_html_template = append(array_html_template, template.HTML(temp))
 		}
+		fmt.Println(len(array_html_template))
 		data["array_title"] = array_title
-		data["array_html"] = array_html
+		data["array_html"] = array_html_template
 		data["array_path"] = array_path
 		data["Track"] = track
 		t, _ = template.ParseFiles(
