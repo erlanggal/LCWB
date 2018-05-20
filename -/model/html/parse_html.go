@@ -10,15 +10,13 @@ import (
 var t *template.Template
 
 const (
-	BaseURL    = "http://localhost:8080"
+	BaseURL    = "http://localhost:7070"
 	PreviewCSS = "-/view/css/preview.css"
 	PreviewJS  = "-/view/js/preview.js"
 )
 
 func ExecuteTemplate(title, url, path string, folderList []string, w http.ResponseWriter) {
-	html, css, js := file.ConcatFile(path)
-	html = strings.Replace(html, "css/style.css", BaseURL+"/assets/css/preview.css", -1)
-	html = strings.Replace(html, "<script type='text/javascript' src='js/js.js'></script>", "", -1)
+	html, css, js := file.ConcatFile([]string{path})
 	file.WriteFile(css, PreviewCSS)
 	file.WriteFile(js, PreviewJS)
 	url_split := strings.Split(url, "/")
