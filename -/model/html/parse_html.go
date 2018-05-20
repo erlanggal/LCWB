@@ -10,7 +10,7 @@ import (
 var t *template.Template
 
 const (
-	BaseURL    = "http://localhost:8080"
+	BaseURL    = "http://localhost:7070"
 	PreviewCSS = "-/view/css/preview.css"
 	PreviewJS  = "-/view/js/preview.js"
 )

@@ -14,7 +14,7 @@ import (
 var t *template.Template
 
 const (
-	BaseURL = "http://localhost:8080"
+	BaseURL = "http://localhost:7070"
 )
 
 func Home(w http.ResponseWriter, r *http.Request) {
