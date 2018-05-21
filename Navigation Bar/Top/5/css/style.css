@@ -59,17 +59,14 @@ a {
   .site-container {
     height: 100%;
   }
-
   .site-container {
     overflow: hidden;
   }
-
   .site-pusher {
     transition-duration: 0.3s;
     -webkit-transform: translateX(0px);
     transform: translateX(0px);
   }
-
   .site-content {
     position: absolute;
     top: 66px;
@@ -80,12 +77,10 @@ a {
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
   }
-
   .header {
     position: static;
 
   }
-
   .header__icon {
     position: relative;
     display: block;
@@ -104,7 +99,6 @@ a {
     left: 15px;
     box-shadow: 0 10px 0 1px #fff, 0 16px 0 1px #fff, 0 22px 0 1px #fff;
   }
-
   .menu {
     position: absolute;
     left: 0;
@@ -124,7 +118,6 @@ a {
     line-height: 40px;
     border-bottom: 1px solid #3f51b5;
   }
-
   .with--sidebar .site-pusher {
     -webkit-transform: translateX(250px);
     transform: translateX(250px);

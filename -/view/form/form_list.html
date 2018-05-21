@@ -24,12 +24,8 @@
 <body>
 	<section class="template-divider">
 		<div class="td-wrapper">
-<<<<<<< HEAD
-			<form action="/create?step=2" method="POST" accept-charset="utf-8">
-=======
 			<form action="/create?step={{.step}}" method="POST" accept-charset="utf-8">
 				<button type="submit">Next</button>
->>>>>>> 69c3194fb0e43367b3fa0d695a325663dee993a6
 				<input type="text" name="track" id="track" value="{{.Track}}" hidden>
 				<input type="text" name="path" id="path" value="Navigation Bar/Top/{{.step}}" hidden>
 				{{ range $idx,$i := .array_html }}
