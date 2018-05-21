@@ -9,7 +9,7 @@ body {
 .nt2-nav {
   width: 100%;
   margin: 0 auto;
-  background: #fff;
+  background: transparent;
   padding: 15px 0;
   box-shadow: 0px 5px 0px #dedede;
 }
@@ -152,7 +152,7 @@ body {
 }
 
 .td-wrapper {
-  margin: 5em auto;
+  margin: 5em;
 }
 
 .td-box {

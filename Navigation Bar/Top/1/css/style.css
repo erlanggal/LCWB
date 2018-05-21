@@ -7,7 +7,7 @@ body {
 .nt2-nav {
   width: 80%;
   margin: 0 auto;
-  background: #fff;
+  background: transparent;
   padding: 50px 0;
   box-shadow: 0px 5px 0px #dedede;
 }
