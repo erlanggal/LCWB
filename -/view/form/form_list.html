@@ -25,7 +25,6 @@
 	<section class="template-divider">
 		<div class="td-wrapper">
 			<form action="/create?step=2" method="POST" accept-charset="utf-8">
-				<button type="submit">Next</button>
 				<input type="text" name="track" id="track" value="{{.Track}}" hidden>
 				<input type="text" name="path" id="path" value="Navigation Bar/Top/" hidden>
 				{{ range $idx,$i := .array_html }}
@@ -49,6 +48,7 @@
 				</div>
 				{{end}}
 				{{ end }}
+				<button type="submit">Next</button>
 			</form>
 		</div>
 	</section>
