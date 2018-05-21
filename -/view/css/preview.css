@@ -12,7 +12,50 @@ body {
 }
 a {
   text-decoration: none;
+<<<<<<< HEAD
+  color: #aaa;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0 10px;
+}
+.nt2-nav ul li a,
+.nt2-nav ul li a:after,
+.nt2-nav ul li a:before {
+  transition: all .5s;
+}
+.nt2-nav ul li a:hover {
+  color: #555;
+}
+.nt2-nav.stroke ul li a,
+.nt2-nav.fill ul li a {
+  position: relative;
+}
+.nt2-nav.stroke ul li a:after,
+.nt2-nav.fill ul li a:after {
+  transition: all .5s;
+}
+.nt2-nav ul li a:hover {
+  color: #555;
+}
+.nt2-nav.stroke ul li a,
+.nt2-nav.fill ul li a {
+  position: relative;
+}
+.nt2-nav.stroke ul li a:after,
+.nt2-nav.fill ul li a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: #aaa;
+  height: 1px;
+=======
   color: inherit;
+>>>>>>> fb0ba3da4ab331bb0668ef08d48af8900dfdc785
 }
 .container {
   overflow: hidden;
