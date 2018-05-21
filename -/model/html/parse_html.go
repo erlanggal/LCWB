@@ -15,7 +15,7 @@ const (
 	PreviewJS  = "-/view/js/preview.js"
 )
 
-func ExecuteTemplate(title, url, path string, folderList []string, w http.ResponseWriter) {
+func KatalogTemplate(title, url, path string, folderList []string, w http.ResponseWriter) {
 	html, css, js := file.ConcatFile([]string{path})
 	file.WriteFile(css, PreviewCSS)
 	file.WriteFile(js, PreviewJS)

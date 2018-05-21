@@ -2,12 +2,11 @@ package session
 
 import (
 	"github.com/gorilla/sessions"
-	"html/template"
 	"net/http"
 	"time"
 )
 
-func SetSession() {
+func SetSession(w http.ResponseWriter, r *http.Request) {
 	var store = sessions.NewCookieStore([]byte("%SESSION%2104%"))
 	sessionToken, _ := store.Get(r, "session-token")
 	sessionToken.Values["token"] = ""
