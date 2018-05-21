@@ -29,10 +29,6 @@ body {
 .nt2-nav ul li a,
 .nt2-nav ul li a:after,
 .nt2-nav ul li a:before {
-=======
-.nt2-nav ul li a,
-.nt2-nav ul li a:after,
-.nt2-nav ul li a:before {
   transition: all .5s;
 }
 .nt2-nav ul li a:hover {
