@@ -1,6 +1,6 @@
 
 $(document).ready(function () {
-    $(".fullscreen").css({ height: window.innerHeight - 40 });
+    $(".fullscreen").css({ height: window.innerHeight - 62 });
 
     var html = $("#section-html").text();
     $("#section-preview").html(html);

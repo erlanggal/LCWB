@@ -1,11 +1,12 @@
 CREATE TABLE t_user (
-id SERIAL,
+id SERIAL PRIMARY KEY,
 name varchar,
 email varchar,
 password varchar,
 company varchar,
 phone varchar,
 address varchar,
+session_token varchar,
 date_created timestamp DEFAULT now()
 );
 
