@@ -1,7 +1,6 @@
 package file
 
 import (
-	"fmt"
 	"html/template"
 	"os"
 	"path/filepath"
@@ -13,7 +12,6 @@ func ConcatFile(pathS []string) (template.HTML, string, string) {
 	var html template.HTML
 	var css, js string
 	for i := 0; i < len(pathS); i++ {
-		fmt.Println(pathS[i])
 		filepath.Walk(pathS[i], func(path string, f os.FileInfo, _ error) error {
 			if !f.IsDir() {
 				r, err := regexp.MatchString(".html", f.Name())

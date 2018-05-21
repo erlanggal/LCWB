@@ -1,6 +1,7 @@
 package html
 
 import (
+	config "github.com/wellcode/LCWB/-/config"
 	file "github.com/wellcode/LCWB/-/model/file"
 	"html/template"
 	"net/http"
@@ -10,12 +11,12 @@ import (
 var t *template.Template
 
 const (
-	BaseURL    = "http://localhost:7070"
+	BaseURL    = config.Base_URL
 	PreviewCSS = "-/view/css/preview.css"
 	PreviewJS  = "-/view/js/preview.js"
 )
 
-func ExecuteTemplate(title, url, path string, folderList []string, w http.ResponseWriter) {
+func KatalogTemplate(title, url, path string, folderList []string, w http.ResponseWriter) {
 	html, css, js := file.ConcatFile([]string{path})
 	file.WriteFile(css, PreviewCSS)
 	file.WriteFile(js, PreviewJS)

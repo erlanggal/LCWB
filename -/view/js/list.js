@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
     $(".fullscreen").css({ height: window.innerHeight - 40 });
 
@@ -28,11 +29,6 @@ $(document).ready(function () {
         setAllDisplayNone(li);
         li3.addClass("selected");
         $("#section-js").css("display", "block");
-    });
-
-    $(".td-box").click(function() {
-        (this.id).css("borderColor", "#03a9f4");
-        alert("a");
     });
 });
 

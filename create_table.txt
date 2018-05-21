@@ -1,0 +1,12 @@
+CREATE TABLE t_user (
+id SERIAL,
+name varchar,
+email varchar,
+password varchar,
+company varchar,
+phone varchar,
+address varchar,
+date_created timestamp DEFAULT now()
+);
+
+INSERT INTO t_user(email) VALUES ("kevin.rizkhy85@gmail.com");
