@@ -14,7 +14,7 @@ import (
 var t *template.Template
 
 const (
-	BaseURL = "http://localhost:8080"
+	BaseURL = "http://localhost:7070"
 )
 
 func Home(w http.ResponseWriter, r *http.Request) {
@@ -48,33 +48,38 @@ func Create(w http.ResponseWriter, r *http.Request) {
 			track = r.FormValue("track") + path + "!@#$%^&*()_+"
 		}
 
-		fmt.Sprintln(data)
+		folder_path := ""
+
 		if step == 1 {
 			data["Title"] = "NavBar"
 			data["type"] = "1"
+			folder_path = "Navigation Bar/Top/"
 		} else if step == 2 {
-			fmt.Fprint(w, track)
+			data["Title"] = "NavBar"
+			data["type"] = "2"
+			folder_path = "Navigation Bar/Top/"
 		} else if step == 3 {
+
 		} else if step == 4 {
 		}
-		array_html_template := []template.HTML{}
-		array_title, array_html, array_path := file.GetFile(".html", "Navigation Bar/Top/")
-		for i := 0; i < len(array_html); i++ {
-			array_html[i] = strings.Replace(array_html[i], "<link rel=\"stylesheet\" href=\"css/style.css\">", "", -1)
-			array_html[i] = strings.Replace(array_html[i], "<script type=\"text/javascript\" src=\"/js/js.js\"></script>", "", -1)
-			var temp string
-			temp = array_html[i]
-			array_html_template = append(array_html_template, template.HTML(temp))
+
+		if step < 3 {
+			array_title, array_html, array_path := file.GetFileList(".html", folder_path)
+			data["array_title"] = array_title
+			data["array_html"] = array_html
+			data["array_path"] = array_path
+			data["Track"] = track
+			data["step"] = step + 1
+			t, _ = template.ParseFiles(
+				"-/view/form/form_list.html",
+			)
+			t.ExecuteTemplate(w, "layout", data)
+		} else {
+			track_split := strings.Split(track, "!@#$%^&*()_+")
+			name := track_split[0]
+			arr_path := track_split[1 : len(track_split)-1]
+			html, css, js := file.ConcatFile(arr_path)
 		}
-		fmt.Println(len(array_html_template))
-		data["array_title"] = array_title
-		data["array_html"] = array_html_template
-		data["array_path"] = array_path
-		data["Track"] = track
-		t, _ = template.ParseFiles(
-			"-/view/form/form_list.html",
-		)
-		t.ExecuteTemplate(w, "layout", data)
 
 	} else {
 		t, _ = template.ParseFiles(
