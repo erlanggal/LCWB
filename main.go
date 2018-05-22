@@ -16,6 +16,7 @@ func main() {
 	r.HandleFunc("/", router.Home)
 	r.HandleFunc("/sign", router.SignIn)
 	r.HandleFunc("/navbar/{type}/{pID}", router.Navbar)
+	r.HandleFunc("/about/{pID}", router.About)
 	r.HandleFunc("/create", router.Create)
 	r.PathPrefix("/assets/").Handler(http.StripPrefix("/assets/", http.FileServer(http.Dir("./-/view/"))))
 	http.Handle("/assets/", r)

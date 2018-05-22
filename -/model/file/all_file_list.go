@@ -22,7 +22,7 @@ func GetFileList(ext, pathS string) ([]string, []template.HTML, []string) {
 				html = append(html, template.HTML(html_code))
 			}
 		} else {
-			if f.Name() != "css" && f.Name() != "js" {
+			if f.Name() != "css" && f.Name() != "js" && f.Name()!="images"{
 				files = append(files, f.Name())
 				arr_path = append(arr_path, path)
 			}

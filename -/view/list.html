@@ -44,7 +44,7 @@
                 <nav>
                   <ul>
                     {{ range $i := .list }}
-                    <a href="{{$.BaseURL}}/{{$.url}}/{{$i}}">
+                    <a href="{{$.BaseURL}}{{$.url}}/{{$i}}">
                       <li>{{$i}}</li>
                     </a>
                     {{ end }}

@@ -11,6 +11,7 @@ import (
 	"net/http"
 	"strconv"
 	"strings"
+	"fmt"
 )
 
 var t *template.Template
@@ -53,5 +54,17 @@ func Navbar(w http.ResponseWriter, r *http.Request) {
 		path = "Navigation Bar/Left/" + id
 	}
 	title := "NAVBAR - " + strings.ToUpper(types)
+	html_exe.KatalogTemplate(title, r.URL.String(), path, folder, w)
+}
+
+func About(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	id := vars["pID"]
+	var folder []string
+	var path string
+	folder = file.FolderList("About/")
+	fmt.Sprintln(123)
+	path = "About/"+id
+	title := "About - " + id
 	html_exe.KatalogTemplate(title, r.URL.String(), path, folder, w)
 }
