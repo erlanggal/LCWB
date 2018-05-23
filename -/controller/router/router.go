@@ -1,17 +1,18 @@
 package router
 
 import (
+	"fmt"
+	"html/template"
+	"net/http"
+	"strconv"
+	"strings"
+
 	"github.com/gorilla/mux"
 	config "github.com/wellcode/LCWB/-/config"
 	create "github.com/wellcode/LCWB/-/controller/create"
 	sign "github.com/wellcode/LCWB/-/controller/sign"
 	file "github.com/wellcode/LCWB/-/model/file"
 	html_exe "github.com/wellcode/LCWB/-/model/html"
-	"html/template"
-	"net/http"
-	"strconv"
-	"strings"
-	"fmt"
 )
 
 var t *template.Template
@@ -64,7 +65,31 @@ func About(w http.ResponseWriter, r *http.Request) {
 	var path string
 	folder = file.FolderList("About/")
 	fmt.Sprintln(123)
-	path = "About/"+id
+	path = "About/" + id
 	title := "About - " + id
+	html_exe.KatalogTemplate(title, r.URL.String(), path, folder, w)
+}
+
+func Form(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	id := vars["pID"]
+	var folder []string
+	var path string
+	folder = file.FolderList("Form/")
+	fmt.Sprintln(123)
+	path = "Form/" + id
+	title := "Form - " + id
+	html_exe.KatalogTemplate(title, r.URL.String(), path, folder, w)
+}
+
+func Footer(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	id := vars["pID"]
+	var folder []string
+	var path string
+	folder = file.FolderList("Footer/")
+	fmt.Sprintln(123)
+	path = "Footer/" + id
+	title := "Footer - " + id
 	html_exe.KatalogTemplate(title, r.URL.String(), path, folder, w)
 }
