@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
     var accItem = document.getElementsByClassName('accordionItem');
     var accHD = document.getElementsByClassName('accordionItemHeading');

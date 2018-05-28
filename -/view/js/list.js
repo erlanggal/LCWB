@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
     $(".fullscreen").css({ height: window.innerHeight - 62 });
 
@@ -10,29 +9,29 @@ $(document).ready(function () {
     var li1 = $(".hp-li:eq(1)");
     var li2 = $(".hp-li:eq(2)");
     var li3 = $(".hp-li:eq(3)");
-    li0.click(function(){
+    li0.click(function () {
         setAllDisplayNone(li);
         li0.addClass("selected");
         $("#section-preview").css("display", "block");
     });
-    li1.click(function(){
+    li1.click(function () {
         setAllDisplayNone(li);
         li1.addClass("selected");
         $("#section-html").css("display", "block");
     });
-    li2.click(function(){
+    li2.click(function () {
         setAllDisplayNone(li);
         li2.addClass("selected");
         $("#section-css").css("display", "block");
     });
-    li3.click(function(){
+    li3.click(function () {
         setAllDisplayNone(li);
         li3.addClass("selected");
         $("#section-js").css("display", "block");
     });
 });
 
-function setAllDisplayNone(li){
+function setAllDisplayNone(li) {
     if (li.hasClass("selected")) {
         li.removeClass("selected");
     }
