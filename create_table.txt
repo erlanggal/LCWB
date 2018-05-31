@@ -16,6 +16,12 @@ id SERIAL,
 name varchar
 );
 
+CREATE TABLE t_user_web (
+id SERIAL,
+user_id int,
+web int
+);
+
 CREATE TABLE t_web (
 id SERIAL,
 base_cost bigint,
@@ -55,7 +61,7 @@ js_code varchar
 
 CREATE TABLE t_user_html_part (
 id SERIAL,
-user int,
+user_id int,
 html_part int
 );
 
@@ -70,7 +76,7 @@ date_created timestamp DEFAULT now()
 
 CREATE TABLE t_order_line (
 id SERIAL,
-order int, 
+order_id int, 
 html_part int
 );
 

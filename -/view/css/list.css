@@ -9,11 +9,13 @@
 
 .list-textarea{
     width: 100%;
-    grid-auto-rows: auto;
+    height: 100%;
     resize: none;
     display:inline-block;
-    min-height: 600px;
     border: none;
+    background-color: #0c1219;
+    color: #fff;
+    padding: 2em;
 }
 
 
@@ -240,9 +242,13 @@ li {
 }
 
 
+.header-wrapper {
+  padding: 1em .75em;
+}
+
+
 .hm-icon {
     z-index: 100000;
-    padding: .5em;
 }
 
 
@@ -276,11 +282,6 @@ li {
     color: #fff;
     font-size: 14px;
     margin: 1.5em 0;
-}
-
-
-.h-preview ul {
-    padding: .5em;
 }
 
 

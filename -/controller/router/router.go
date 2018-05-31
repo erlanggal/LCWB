@@ -1,16 +1,18 @@
 package router
 
 import (
+	"fmt"
+	"html/template"
+	"net/http"
+	"strconv"
+	"strings"
+
 	"github.com/gorilla/mux"
 	config "github.com/wellcode/LCWB/-/config"
 	create "github.com/wellcode/LCWB/-/controller/create"
 	sign "github.com/wellcode/LCWB/-/controller/sign"
 	file "github.com/wellcode/LCWB/-/model/file"
 	html_exe "github.com/wellcode/LCWB/-/model/html"
-	"html/template"
-	"net/http"
-	"strconv"
-	"strings"
 )
 
 var t *template.Template
@@ -53,5 +55,77 @@ func Navbar(w http.ResponseWriter, r *http.Request) {
 		path = "Navigation Bar/Left/" + id
 	}
 	title := "NAVBAR - " + strings.ToUpper(types)
+	html_exe.KatalogTemplate(title, r.URL.String(), path, folder, w)
+}
+
+func About(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	id := vars["pID"]
+	var folder []string
+	var path string
+	folder = file.FolderList("About/")
+	fmt.Sprintln(123)
+	path = "About/" + id
+	title := "About - " + id
+	html_exe.KatalogTemplate(title, r.URL.String(), path, folder, w)
+}
+
+func Form(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	id := vars["pID"]
+	var folder []string
+	var path string
+	folder = file.FolderList("Form/")
+	fmt.Sprintln(123)
+	path = "Form/" + id
+	title := "Form - " + id
+	html_exe.KatalogTemplate(title, r.URL.String(), path, folder, w)
+}
+
+func Footer(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	id := vars["pID"]
+	var folder []string
+	var path string
+	folder = file.FolderList("Footer/")
+	fmt.Sprintln(123)
+	path = "Footer/" + id
+	title := "Footer - " + id
+	html_exe.KatalogTemplate(title, r.URL.String(), path, folder, w)
+}
+
+func Login(w http.ResponseWriter, r *http.Request) {
+	// vars := mux.Vars(r)
+	// id := vars["pID"]
+	var folder []string
+	var path string
+	folder = file.FolderList("Login/")
+	fmt.Sprintln(123)
+	path = "Login"
+	title := "Login"
+	html_exe.KatalogTemplate(title, r.URL.String(), path, folder, w)
+}
+
+func Register(w http.ResponseWriter, r *http.Request) {
+	// vars := mux.Vars(r)
+	// id := vars["pID"]
+	var folder []string
+	var path string
+	folder = file.FolderList("Register/")
+	fmt.Sprintln(123)
+	path = "Register"
+	title := "Register"
+	html_exe.KatalogTemplate(title, r.URL.String(), path, folder, w)
+}
+
+func Dashboard(w http.ResponseWriter, r *http.Request) {
+	// vars := mux.Vars(r)
+	// id := vars["pID"]
+	var folder []string
+	var path string
+	folder = file.FolderList("Dashboard/")
+	fmt.Sprintln(123)
+	path = "Dashboard"
+	title := "Dashboard"
 	html_exe.KatalogTemplate(title, r.URL.String(), path, folder, w)
 }

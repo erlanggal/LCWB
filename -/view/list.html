@@ -33,7 +33,7 @@
               <div class="d-flex justify-content-start">
                 <div class="hm-icon">
                   <a id="open" href="#" onclick="openSidebar()">
-                    <i class="fa fa-bars"></i>
+                    <i class="fa fa-bars color-black"></i>
                   </a>
                   <a class="hidden" id="close" href="#" onclick="closeSidebar()">
                     <i class="fa fa-times"></i>
@@ -44,7 +44,7 @@
                 <nav>
                   <ul>
                     {{ range $i := .list }}
-                    <a href="{{$.BaseURL}}/{{$.url}}/{{$i}}">
+                    <a href="{{$.BaseURL}}{{$.url}}/{{$i}}">
                       <li>{{$i}}</li>
                     </a>
                     {{ end }}
@@ -71,13 +71,13 @@
       <section id="section-preview" class="section-preview">
         {{.html_str}}
       </section>
-      <section id="section-html" style="display: none;">
+      <section class="fullscreen" id="section-html" style="display: none;">
         <textarea class="list-textarea" contentEditable="false">{{.html_str}}</textarea>
       </section>
-      <section id="section-css" style="display: none;">
+      <section class="fullscreen" id="section-css" style="display: none;">
         <textarea class="list-textarea" contentEditable="false">{{.css_str}}</textarea>
       </section>
-      <section id="section-js" style="display: none;">
+      <section class="fullscreen" id="section-js" style="display: none;">
         <textarea class="list-textarea" contentEditable="false">{{.js_str}}</textarea>
       </section>
     </main>

@@ -15,8 +15,7 @@ func SignIn(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()
 	var store = sessions.NewCookieStore([]byte("%SESSION%2104%"))
 	sessionToken, _ := store.Get(r, "session-token")
-	sessionToken.Values["token"] = ""
-	if session.CheckSession != nil {
+	if session.CheckSession(r) != nil {
 		http.Redirect(w, r, "/create", 302)
 	} else {
 		if r.Method == "POST" {
