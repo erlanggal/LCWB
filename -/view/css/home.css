@@ -35,11 +35,12 @@ body {
     width: 100%;
     padding: 0;
     margin: 0;
-    font-family: 'Tajawal', sans-serif !important;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
     text-rendering: optimizeSpeed;
     overflow-x: hidden;
     line-height: 1.5;
-    background-color: #f8f8f8;
+    background-color: #ECEFF1;
+    color: #0b0b0b;
 }
 
 header, nav, main, section, footer {
@@ -384,27 +385,101 @@ textarea {
     }
 }
 
+.d-header {
+    background-color: #fff;
+    max-height: 50px;
+}
+
+.d-logo {
+    padding: .5em 0;
+    background-color: #5bdf6f;
+}
+
+.d-logo p {
+    text-align: center;
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.d-header .d-personal-box ul .d-personal-details {
+    max-height: 50px;
+}
+
+.d-mini:hover, .d-header .d-personal-box ul .d-notifications:hover, .d-header .d-personal-box ul .d-personal-details:hover {
+    background-color: #9df5aa;
+    cursor: pointer;
+}
+
+.d-mini {
+    padding: .8125em 1em;
+}
+
+.d-header .d-personal-box ul li {
+    padding: 0.594em 1em;
+}
+
+.d-header .d-personal-box ul {
+    max-height: 50px;
+}
+
+.d-header .d-personal-box .d-personal-img img {
+    border-radius: 50%;
+}
+
+.dropdown-notif {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown-notif .notif-bell {
+    cursor: pointer;
+    font-size: 16px;    
+    border: none;
+    outline: none;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.notif-content {
+    padding: .5em;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.notif-content p {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.show {
+    display: block;
+}
+
 .accordionWrapper {
     background: #fff;
-    float: left;
-    box-sizing: border-box;
-    box-shadow: 0 1.5em 85px 0 rgba(0, 0, 0, 0.2);
 }
 
 .accordionItem {
-    float: left;
     display: block;
     width: 100%;
-    box-sizing: border-box;
 }
 
 .accordionItemHeading {
     cursor: pointer;
-    padding: .5em 1em;
-    background: #099ea0;
-    color: #fff;
+    padding: .85em .85em;
+    background: #90A4AE;
     width: 100%;
-    box-sizing: border-box;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 .close .accordionItemContent {
@@ -414,7 +489,6 @@ textarea {
     -o-transform: scaleY(0);
     -ms-transform: scaleY(0);
     transform: scaleY(0);
-    float: left;
     display: block;
 }
 
@@ -430,25 +504,20 @@ textarea {
     -o-transform-origin: top;
     -ms-transform-origin: top;
     transform-origin: top;
-    -webkit-transition: -webkit-transform 0.4s ease-out;
-    -o-transition: -o-transform 0.4s ease;
-    -ms-transition: -ms-transform 0.4s ease;
-    transition: transform 0.4s ease;
-    box-sizing: border-box;
-}
-
-.open .accordionItemContent ul {
-    border-top: 1px solid #0b0b0b;
-    border-bottom: 1px solid #0b0b0b;
+    -webkit-transition: -webkit-transform 0.4s ease-in-out;
+    -o-transition: -o-transform 0.4s ease-in-out;
+    -ms-transition: -ms-transform 0.4s ease-in-out;
+    transition: transform 0.4s ease-in-out;
 }
 
 .open .accordionItemContent ul li {
-    padding: 1em 2em;
+    padding: .75em 2em;
     background-color: #ebebeb;
+    font-size: 14px;
 }
 
 .open .accordionItemContent ul li:hover {
-    background-color: #099ea0;
+    background-color: #5bdf6f;
 }
 
 .open .accordionItemHeading {
@@ -456,8 +525,38 @@ textarea {
     background-color: #bdc3c7;
 }
 
+.d-content, .d-sidebar {
+    width: 100%;
+}
+
 .d-content {
-    position: relative;
+    padding: 1em
+}
+
+#d-content, #d-sidebar {
+    -webkit-transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    -moz-transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    -ms-transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    -o-transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.d-sidebar-shrink {
+    max-height: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    -moz-transform: translate3d(-100%, 0, 0);
+    -o-transform: translate3d(-100%, 0, 0);
+    -ms-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+}
+
+.d-sidebar-shrink > .accordionItem {
+    display: none;
+}
+
+.d-content-expand {
+    flex: 0 0 100%;
+    max-width: 100%;
 }
 
 .d-content .d-proceed-btn a {

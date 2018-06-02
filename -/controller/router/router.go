@@ -10,6 +10,7 @@ import (
 	"github.com/gorilla/mux"
 	config "github.com/wellcode/LCWB/-/config"
 	create "github.com/wellcode/LCWB/-/controller/create"
+	home "github.com/wellcode/LCWB/-/controller/home"
 	sign "github.com/wellcode/LCWB/-/controller/sign"
 	file "github.com/wellcode/LCWB/-/model/file"
 	html_exe "github.com/wellcode/LCWB/-/model/html"
@@ -18,6 +19,10 @@ import (
 var t *template.Template
 
 func Home(w http.ResponseWriter, r *http.Request) {
+	home.Home(w, r)
+}
+
+func PartialList(w http.ResponseWriter, r *http.Request) {
 	t, _ = template.ParseFiles(
 		"-/view/all.html",
 	)

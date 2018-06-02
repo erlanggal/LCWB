@@ -1,6 +1,7 @@
 $(document).ready(function () {
     $(".fullscreen").css({ height: window.innerHeight - 62 });
-
+    document.getElementsByClassName("d-sidebar")[0].style.minHeight = window.innerHeight - 50;
+    document.getElementsByClassName("d-content")[0].style.minHeight = window.innerHeight - 51;
     var html = $("#section-html").text();
     $("#section-preview").html(html);
 
