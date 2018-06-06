@@ -53,10 +53,10 @@ func Navbar(w http.ResponseWriter, r *http.Request) {
 	var folder []string
 	var path string
 	if types == "top" {
-		folder = file.FolderList("Navigation Bar/Top")
+		folder = file.FolderList("partial_html/Navigation Bar/Top")
 		path = "Navigation Bar/Top/" + id
 	} else if types == "left" {
-		folder = file.FolderList("Navigation Bar/Left")
+		folder = file.FolderList("partial_html/Navigation Bar/Left")
 		path = "Navigation Bar/Left/" + id
 	}
 	title := "NAVBAR - " + strings.ToUpper(types)
@@ -68,7 +68,7 @@ func About(w http.ResponseWriter, r *http.Request) {
 	id := vars["pID"]
 	var folder []string
 	var path string
-	folder = file.FolderList("About/")
+	folder = file.FolderList("partial_html/About/")
 	fmt.Sprintln(123)
 	path = "About/" + id
 	title := "About - " + id
@@ -80,7 +80,7 @@ func Form(w http.ResponseWriter, r *http.Request) {
 	id := vars["pID"]
 	var folder []string
 	var path string
-	folder = file.FolderList("Form/")
+	folder = file.FolderList("partial_html/Form/")
 	fmt.Sprintln(123)
 	path = "Form/" + id
 	title := "Form - " + id
@@ -92,7 +92,7 @@ func Footer(w http.ResponseWriter, r *http.Request) {
 	id := vars["pID"]
 	var folder []string
 	var path string
-	folder = file.FolderList("Footer/")
+	folder = file.FolderList("partial_html/Footer/")
 	fmt.Sprintln(123)
 	path = "Footer/" + id
 	title := "Footer - " + id
@@ -104,7 +104,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 	// id := vars["pID"]
 	var folder []string
 	var path string
-	folder = file.FolderList("Login/")
+	folder = file.FolderList("partial_html/Login/")
 	fmt.Sprintln(123)
 	path = "Login"
 	title := "Login"
@@ -116,7 +116,7 @@ func Register(w http.ResponseWriter, r *http.Request) {
 	// id := vars["pID"]
 	var folder []string
 	var path string
-	folder = file.FolderList("Register/")
+	folder = file.FolderList("partial_html/Register/")
 	fmt.Sprintln(123)
 	path = "Register"
 	title := "Register"
@@ -128,7 +128,7 @@ func Dashboard(w http.ResponseWriter, r *http.Request) {
 	// id := vars["pID"]
 	var folder []string
 	var path string
-	folder = file.FolderList("Dashboard/")
+	folder = file.FolderList("partial_html/Dashboard/")
 	fmt.Sprintln(123)
 	path = "Dashboard"
 	title := "Dashboard"
