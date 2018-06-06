@@ -23,16 +23,6 @@
         <script type="text/javascript" src="{{.BaseURL}}assets/js/fontawesome-all.js"></script>
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
         <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $('#myTable').DataTable({
-                  data: {{.weblist}},
-                  destroy: true,
-                   "scrollX": true,
-                  columns:[{title:"Id"},{title:"Domain"},{title:"Base Cost"},{title:"Maintenance"},{title:"Service"}]
-                });
-            });
-        </script>
     </head>
     <body>
         <section class="dashboard" id="dashboard">
@@ -134,8 +124,7 @@
                     <div class="col-9 no-padding" id="d-content">
                         <div class="d-content">
                             <div class="">
-                                <table id="myTable"  style="width:100%">
-                                </table>
+                                 {{template "content" .}}
                             </div>
                             <div class="d-proceed-btn">
                                 <a href="" class="btn btn-white btn-rounded shadow-outset-sm">

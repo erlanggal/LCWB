@@ -1,4 +1,4 @@
-package home
+package preview
 
 import (
 	"fmt"
@@ -11,18 +11,18 @@ import (
 
 var t *template.Template
 
-func Home(w http.ResponseWriter, r *http.Request) {
+func Preview(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()
 	session_val := session.CheckSession(r)
 	if session_val != nil {
 		t, _ = template.ParseFiles(
 			"-/view/home.html",
-			"-/view/partial/table.html",
+			"-/view/partial/preview.html",
 		)
 		sesion_str := fmt.Sprint(session_val)
 		data := user.GetUserData(sesion_str)
 		data["BaseURL"] = config.Base_URL
-		data["weblist"] = template.JS(user.GetUserWebList(sesion_str))
+		data["web_id"] = r.FormValue("web_id")
 		t.ExecuteTemplate(w, "layout", data)
 	} else {
 		http.Redirect(w, r, "/sign", 302)
