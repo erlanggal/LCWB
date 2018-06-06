@@ -54,10 +54,10 @@ func Navbar(w http.ResponseWriter, r *http.Request) {
 	var path string
 	if types == "top" {
 		folder = file.FolderList("partial_html/Navigation Bar/Top")
-		path = "Navigation Bar/Top/" + id
+		path = "partial_html/Navigation Bar/Top/" + id
 	} else if types == "left" {
 		folder = file.FolderList("partial_html/Navigation Bar/Left")
-		path = "Navigation Bar/Left/" + id
+		path = "partial_html/Navigation Bar/Left/" + id
 	}
 	title := "NAVBAR - " + strings.ToUpper(types)
 	html_exe.KatalogTemplate(title, r.URL.String(), path, folder, w)
@@ -69,8 +69,7 @@ func About(w http.ResponseWriter, r *http.Request) {
 	var folder []string
 	var path string
 	folder = file.FolderList("partial_html/About/")
-	fmt.Sprintln(123)
-	path = "About/" + id
+	path = "partial_html/About/" + id
 	title := "About - " + id
 	html_exe.KatalogTemplate(title, r.URL.String(), path, folder, w)
 }
@@ -81,8 +80,7 @@ func Form(w http.ResponseWriter, r *http.Request) {
 	var folder []string
 	var path string
 	folder = file.FolderList("partial_html/Form/")
-	fmt.Sprintln(123)
-	path = "Form/" + id
+	path = "partial_html/Form/" + id
 	title := "Form - " + id
 	html_exe.KatalogTemplate(title, r.URL.String(), path, folder, w)
 }
@@ -93,8 +91,7 @@ func Footer(w http.ResponseWriter, r *http.Request) {
 	var folder []string
 	var path string
 	folder = file.FolderList("partial_html/Footer/")
-	fmt.Sprintln(123)
-	path = "Footer/" + id
+	path = "partial_html/Footer/" + id
 	title := "Footer - " + id
 	html_exe.KatalogTemplate(title, r.URL.String(), path, folder, w)
 }

@@ -22,10 +22,10 @@ func KatalogTemplate(title, url, path string, folderList []string, w http.Respon
 	file.WriteFile(js, PreviewJS)
 	url_split := strings.Split(url, "/")
 	url_str := ""
-	if len(url_split) > 0 {
+	if len(url_split) < 4 {
 		url_str = url_split[1]
-	}else {
-		url_str = url_split[1] + "/" + url_split[2] 
+	} else {
+		url_str = url_split[1] + "/" + url_split[2]
 	}
 	data := map[string]interface{}{
 		"BaseURL":  BaseURL,
